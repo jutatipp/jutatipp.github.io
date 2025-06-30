@@ -2,38 +2,87 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>แนะนำตัว</title>
+  <title>ข้อมูลส่วนตัว</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Kanit', sans-serif;
       max-width: 600px;
-      margin: auto;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 30px;
+      background: linear-gradient(135deg, #e0eafc 0%, hsl(190, 85%, 76%) 100%);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border-radius: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      background: url('002 .png') center/cover no-repeat;
+      opacity: 0.18;
+      pointer-events: none;
     }
     img {
-      width: 150px;
+      width: 160px;
       border-radius: 50%;
+      display: block;
+      margin: 0 auto 18px auto;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      border: 4px solid #60b7cf;
+    }
+    h1 {
+      text-align: center;
+      color: #3b85a2;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    p {
+      font-size: 1.1em;
+      color: #004e6f;
+      margin: 8px 0;
+      text-align: center;
+    }
+    .social {
+      margin-top: 22px;
+      text-align: center;
     }
     .social a {
-      margin-right: 10px;
+      display: inline-block;
+      margin: 0 12px;
       text-decoration: none;
-      color: #1a0dab;
+      color: #ffffff;
+      background: linear-gradient(90deg, #246892 0%, #54aaf0 100%);
+      padding: 8px 18px;
+      border-radius: 22px;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(30, 32, 68, 0.1);
+    }
+    .social a:hover {
+      background: linear-gradient(90deg, #8f94fb 0%, #4e54c8 100%);
+      transform: translateY(-2px) scale(1.05);
+    }
+    strong {
+      color: #004d80;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-  <h1> แนะนำตัว </h1>
+  <h1> ข้อมูลส่วนตัว </h1>
   <img src="001.jpg" alt="รูปโปรไฟล์">
-  <p><strong>จุฑาทิพย์ ภูบุญลอด</strong></p>
+  <p><strong>นางสาว จุฑาทิพย์ ภูบุญลอด</strong></p>
   <p><strong>สาขา:</strong> วิทยาการคอมพิมเตอร์สารสนเทศ</p>
   <p><strong>รหัสนักศึกษา:</strong> 663450036-3</p>
   <p><strong>อีเมล:</strong> <a href="mailto:jutatip.ph@kkumail.com">jutatip.ph@kkumail.com</a></p>
 
   <div class="social">
-    <strong>Social:</strong><br>
-    <a href="https://www.facebook.com/jutatip.phubunlot/" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/jutatip_sky/" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@m_misky" target="_blank">LinkedIn</a>
-  </div>
+      <strong>Social:</strong><br>
+      <a href="https://www.facebook.com/jutatip.phubunlot/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/jutatip_sky/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
 </body>
 </html>
