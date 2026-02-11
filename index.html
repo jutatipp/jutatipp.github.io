@@ -7,6 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --brown-dark:#3e2c23;
+  --brown-main:#5c4033;
+  --brown-light:#8b6f5c;
+  --blue-accent:#4da6ff;
+  --blue-soft:#cfe9ff;
+  --white:#ffffff;
+}
+
 *{
   margin:0;
   padding:0;
@@ -16,39 +25,39 @@
 }
 
 body{
-  background:#f4f7fb;
-  color:#333;
+  background:var(--brown-dark);
+  color:var(--white);
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 nav{
   position:fixed;
   width:100%;
   top:0;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  background:rgba(62,44,35,0.95);
   display:flex;
   justify-content:center;
   gap:40px;
-  padding:15px 0;
+  padding:18px 0;
+  backdrop-filter:blur(8px);
   z-index:1000;
 }
 
 nav a{
   text-decoration:none;
-  color:#4e73df;
-  font-weight:500;
+  color:var(--blue-soft);
+  font-weight:400;
+  letter-spacing:1px;
+  transition:0.3s;
 }
 
 nav a:hover{
-  color:#1cc88a;
+  color:var(--blue-accent);
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   height:100vh;
-  background:linear-gradient(135deg,#4e73df,#1cc88a);
-  color:white;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -58,75 +67,98 @@ nav a:hover{
 }
 
 .hero img{
-  width:160px;
+  width:170px;
   border-radius:50%;
+  border:4px solid var(--blue-accent);
   margin-bottom:20px;
-  border:4px solid white;
 }
 
 .hero h1{
-  font-size:40px;
+  font-size:42px;
+  font-weight:600;
 }
 
 .hero p{
-  margin:10px 0;
+  margin-top:10px;
   font-size:18px;
+  color:var(--blue-soft);
 }
 
 .btn{
-  margin-top:15px;
-  padding:10px 20px;
-  background:white;
-  color:#4e73df;
+  margin-top:20px;
+  padding:12px 28px;
+  background:var(--blue-accent);
+  color:white;
   text-decoration:none;
-  border-radius:8px;
-  font-weight:500;
+  border-radius:30px;
   transition:0.3s;
+  font-weight:500;
 }
 
 .btn:hover{
-  transform:scale(1.05);
+  background:var(--blue-soft);
+  color:var(--brown-dark);
+  transform:translateY(-3px);
 }
 
-/* ===== SECTION ===== */
+/* SECTION */
 section{
-  padding:80px 10%;
+  padding:100px 10%;
 }
 
 section h2{
   text-align:center;
-  margin-bottom:40px;
-  color:#4e73df;
+  margin-bottom:50px;
+  font-size:30px;
+  color:var(--blue-accent);
+  position:relative;
+}
+
+section h2::after{
+  content:"";
+  width:60px;
+  height:3px;
+  background:var(--blue-accent);
+  display:block;
+  margin:10px auto 0;
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+  gap:30px;
 }
 
 .card{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.05);
-  transition:0.3s;
+  background:var(--brown-main);
+  padding:25px;
+  border-radius:20px;
+  transition:0.4s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 .card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-10px);
+  background:var(--brown-light);
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:var(--blue-accent);
 }
 
 footer{
   text-align:center;
-  padding:20px;
-  background:#eaeaea;
+  padding:25px;
+  background:var(--brown-main);
+  margin-top:40px;
+  font-size:14px;
+  color:var(--blue-soft);
 }
 
-/* Responsive */
 @media(max-width:768px){
   .hero h1{
-    font-size:28px;
+    font-size:30px;
   }
 }
 </style>
@@ -150,7 +182,7 @@ footer{
 
 <section id="about">
   <h2>About Me</h2>
-  <p style="text-align:center; max-width:700px; margin:auto;">
+  <p style="max-width:700px;margin:auto;text-align:center;line-height:1.8;">
     นักศึกษาวิทยาการคอมพิวเตอร์สารสนเทศ มหาวิทยาลัยขอนแก่น
     สนใจด้าน Frontend Development, UX/UI และ AI
     มีประสบการณ์พัฒนาเว็บแอปพลิเคชัน ระบบฐานข้อมูล และเกม 3D
@@ -161,31 +193,28 @@ footer{
   <h2>Skills</h2>
   <div class="grid">
     <div class="card">HTML / CSS / JavaScript</div>
-    <div class="card">Next.js / React</div>
+    <div class="card">React / Next.js</div>
     <div class="card">PHP / MySQL</div>
     <div class="card">Unity 3D</div>
-    <div class="card">AI (Decision Tree)</div>
     <div class="card">Figma / Canva</div>
+    <div class="card">AI (Decision Tree)</div>
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div class="grid">
-
     <div class="card">
       <h3>Calculator App</h3>
       <p>เครื่องคิดเลขพื้นฐานพัฒนาโดย JavaScript</p>
-      <p><strong>Tech:</strong> HTML, CSS, JS</p>
       <a href="calculator.html" class="btn">Live Demo</a>
     </div>
-
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p style="text-align:center;">
+  <p style="text-align:center;line-height:1.8;">
     📧 jutatip.ph@kkumail.com <br>
     🌐 Facebook: jutatip.phubunlot
   </p>
