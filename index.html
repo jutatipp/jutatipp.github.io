@@ -6,13 +6,14 @@
 <title>Jutatip | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
   --primary:#3fa9f5;
   --dark:#0e0e0e;
   --gray:#666;
-  --light:#f7f7f7;
+  --light:#f5f5f5;
   --shadow:0 25px 50px rgba(0,0,0,0.08);
 }
 
@@ -29,7 +30,7 @@ body{
   color:var(--dark);
 }
 
-/* NAVIGATION */
+/* NAV */
 nav{
   position:fixed;
   top:40px;
@@ -94,13 +95,18 @@ nav a:hover{
   line-height:1.8;
 }
 
+/* BUTTON GROUP */
+.button-group{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
 .btn{
-  display:inline-block;
   padding:16px 35px;
   border-radius:40px;
   text-decoration:none;
   font-size:14px;
-  margin-right:15px;
   transition:0.3s;
 }
 
@@ -126,10 +132,10 @@ nav a:hover{
 /* HERO IMAGE */
 .hero-right{
   flex:1;
-  background:url("001.jpg") center/cover no-repeat;
+  background:url("profile.jpg") center/cover no-repeat;
 }
 
-/* GENERIC SECTION */
+/* SECTION */
 section{
   min-height:100vh;
   display:flex;
@@ -164,23 +170,36 @@ section{
   max-width:650px;
 }
 
-.project-box h3{
-  font-size:24px;
-  margin-bottom:15px;
-}
-
-.project-box p{
-  margin-bottom:25px;
-}
-
 /* CONTACT */
 .contact-box{
-  margin-top:50px;
-  padding:60px;
+  margin-top:40px;
+  padding:50px;
   border-radius:40px;
   background:var(--dark);
   color:white;
   max-width:600px;
+}
+
+.contact-box p{
+  margin-bottom:10px;
+}
+
+/* SOCIAL ICONS */
+.social-icons{
+  margin-top:30px;
+  display:flex;
+  gap:25px;
+}
+
+.social-icons a{
+  font-size:28px;
+  color:var(--dark);
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  color:var(--primary);
+  transform:translateY(-5px);
 }
 
 footer{
@@ -220,12 +239,26 @@ footer{
     <h1>Hello, I'm <span>Jutatip</span></h1>
     <p>
       A Computer Science student focused on clean interface design
-      and modern web development. I build structured, professional,
-      and visually impactful digital experiences.
+      and modern web development. I build structured and visually
+      impactful digital experiences.
     </p>
 
-    <a href="#projects" class="btn btn-primary">View Work</a>
-    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <div class="button-group">
+      <a href="#projects" class="btn btn-primary">View Work</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+
+    <!-- Social clickable icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/jutatip.phubunlot" target="_blank">
+        <i class="fab fa-facebook"></i>
+      </a>
+
+      <a href="https://github.com/jutatipp" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
   </div>
 
   <div class="hero-right"></div>
@@ -236,9 +269,8 @@ footer{
     <h2>About Me</h2>
     <p>
       I am currently studying Computer Science and Information Technology.
-      I enjoy designing clean layouts and developing responsive websites.
-      My goal is to become a professional frontend developer with strong
-      UI/UX understanding and creative problem-solving skills.
+      I enjoy creating clean and modern user interfaces while continuously
+      improving my frontend development skills.
     </p>
   </div>
 </section>
@@ -250,9 +282,8 @@ footer{
     <div class="project-box">
       <h3>Calculator Web Application</h3>
       <p>
-        An interactive calculator developed using HTML, CSS, and JavaScript.
-        The project demonstrates layout structuring, UI styling,
-        and basic JavaScript functionality.
+        An interactive calculator built with HTML, CSS, and JavaScript.
+        This project focuses on usability and structured UI layout.
       </p>
 
       <a href="calculator.html" class="btn btn-primary">Open Project</a>
@@ -266,7 +297,8 @@ footer{
 
     <div class="contact-box">
       <p>Email: jutatip.ph@kkumail.com</p>
-      <p>Open for collaboration and learning opportunities.</p>
+      <p>LINE: 12345</p>
+      <p>Phone: 0999</p>
     </div>
   </div>
 </section>
