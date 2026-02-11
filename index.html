@@ -3,61 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jutatip | Portfolio</title>
+<title>Jutatip Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
+  --brown:#5a3b2e;
+  --brown-light:#8b5e3c;
+  --blue:#3fa9f5;
   --white:#ffffff;
-  --blue:#3aa6ff;
-  --brown:#6b4226;
-  --brown-soft:#9c6b4a;
-  --text-dark:#1c1c1c;
-  --text-muted:#666;
-  --shadow:0 10px 30px rgba(0,0,0,0.08);
+  --shadow:0 10px 40px rgba(0,0,0,0.1);
 }
 
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Inter',sans-serif;
+  font-family:'Prompt',sans-serif;
 }
 
 body{
-  background:var(--white);
-  color:var(--text-dark);
+  background:#fff;
+  overflow-x:hidden;
 }
 
 /* NAVBAR */
 nav{
   position:fixed;
   width:100%;
+  top:0;
   display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 8%;
-  background:white;
-  box-shadow:var(--shadow);
+  justify-content:center;
+  padding:25px 0;
   z-index:1000;
-}
-
-nav h2{
-  color:var(--brown);
-  letter-spacing:1px;
 }
 
 nav ul{
   list-style:none;
   display:flex;
-  gap:30px;
+  gap:60px;
+  background:rgba(255,255,255,0.9);
+  padding:12px 40px;
+  border-radius:50px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(10px);
 }
 
 nav a{
   text-decoration:none;
-  color:var(--text-muted);
-  font-size:14px;
+  color:var(--brown);
+  font-weight:500;
   transition:0.3s;
 }
 
@@ -67,31 +63,34 @@ nav a:hover{
 
 /* HERO */
 .hero{
+  height:100vh;
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:160px 8% 100px;
-  gap:50px;
-  flex-wrap:wrap;
 }
 
-.hero-text{
-  max-width:550px;
+.hero-left{
+  flex:1;
+  background:linear-gradient(
+      90deg,
+      var(--brown) 0%,
+      var(--brown-light) 60%,
+      rgba(255,255,255,0.2) 100%
+  );
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 8%;
 }
 
-.hero-text h1{
+.hero-left h1{
   font-size:48px;
-  margin-bottom:15px;
+  margin-bottom:20px;
 }
 
-.hero-text span{
-  color:var(--blue);
-}
-
-.hero-text p{
-  color:var(--text-muted);
-  margin-bottom:25px;
-  line-height:1.6;
+.hero-left p{
+  line-height:1.7;
+  margin-bottom:30px;
+  max-width:500px;
 }
 
 .btn{
@@ -99,15 +98,14 @@ nav a:hover{
   padding:12px 28px;
   border-radius:30px;
   text-decoration:none;
-  font-size:14px;
   margin-right:15px;
   transition:0.3s;
+  font-size:14px;
 }
 
 .btn-primary{
   background:var(--blue);
   color:white;
-  box-shadow:0 8px 20px rgba(58,166,255,0.3);
 }
 
 .btn-primary:hover{
@@ -115,59 +113,44 @@ nav a:hover{
 }
 
 .btn-outline{
-  border:2px solid var(--brown);
-  color:var(--brown);
-}
-
-.btn-outline:hover{
-  background:var(--brown);
+  border:2px solid white;
   color:white;
 }
 
-/* HERO IMAGE */
-.hero-img{
+.btn-outline:hover{
+  background:white;
+  color:var(--brown);
+}
+
+/* HERO RIGHT IMAGE */
+.hero-right{
+  flex:1;
+  background:url("profile.jpg") center/cover no-repeat;
   position:relative;
 }
 
-.hero-img img{
-  width:350px;
-  border-radius:25px;
-  box-shadow:var(--shadow);
-}
-
-.hero-img::after{
+.hero-right::after{
   content:"";
   position:absolute;
   inset:0;
-  border-radius:25px;
-  background:linear-gradient(45deg,rgba(58,166,255,0.15),rgba(107,66,38,0.15));
+  background:linear-gradient(270deg,rgba(255,255,255,0.1),rgba(0,0,0,0.2));
 }
 
 /* SECTION */
 section{
-  padding:100px 8%;
+  padding:120px 10%;
 }
 
 .section-title{
   font-size:32px;
   margin-bottom:50px;
-  position:relative;
+  text-align:center;
+  color:var(--brown);
 }
 
-.section-title::after{
-  content:"";
-  width:60px;
-  height:4px;
-  background:var(--blue);
-  display:block;
-  margin-top:10px;
-  border-radius:5px;
-}
-
-/* CARD GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
 }
 
@@ -177,12 +160,10 @@ section{
   border-radius:20px;
   box-shadow:var(--shadow);
   transition:0.3s;
-  border:1px solid #eee;
 }
 
 .card:hover{
-  transform:translateY(-8px);
-  border-color:var(--blue);
+  transform:translateY(-10px);
 }
 
 .card h3{
@@ -191,38 +172,33 @@ section{
 }
 
 .card p{
-  color:var(--text-muted);
+  color:#555;
   font-size:14px;
-}
-
-/* PROJECT IMAGE */
-.project-img{
-  width:100%;
-  border-radius:15px;
-  margin-bottom:15px;
+  line-height:1.6;
 }
 
 /* CONTACT */
-.contact-box{
-  background:linear-gradient(135deg,var(--blue),var(--brown-soft));
-  padding:50px;
-  border-radius:25px;
+.contact{
+  background:linear-gradient(135deg,var(--blue),var(--brown-light));
   color:white;
   text-align:center;
+  border-radius:30px;
+  padding:60px;
 }
 
-/* FOOTER */
 footer{
   text-align:center;
   padding:40px;
-  color:var(--text-muted);
+  color:#888;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero{
     flex-direction:column;
-    text-align:center;
+  }
+  .hero-right{
+    height:400px;
   }
 }
 </style>
@@ -231,64 +207,77 @@ footer{
 <body>
 
 <nav>
-  <h2>Jutatip</h2>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#">หน้าแรก</a></li>
+    <li><a href="#about">เกี่ยวกับฉัน</a></li>
+    <li><a href="#projects">ผลงาน</a></li>
+    <li><a href="#contact">ติดต่อ</a></li>
   </ul>
 </nav>
 
 <div class="hero">
-  <div class="hero-text">
-    <h1>Hello, I'm <span>Jutatip</span></h1>
-    <p>Computer Science student focused on modern UI design and clean web development.
-       Passionate about building interactive and professional digital experiences.</p>
-
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="#" class="btn btn-outline">Download CV</a>
+  <div class="hero-left">
+    <h1>สวัสดี ฉันคือ จุฑาทิพย์</h1>
+    <p>
+      นักศึกษาสาขาวิทยาการคอมพิวเตอร์สารสนเทศ
+      มีความสนใจด้านการออกแบบเว็บไซต์ที่ทันสมัย
+      และการพัฒนา Web Application ให้ใช้งานง่าย
+      ดูเป็นมืออาชีพ และตอบโจทย์ผู้ใช้งานจริง
+    </p>
+    <a href="#projects" class="btn btn-primary">ดูผลงาน</a>
+    <a href="#contact" class="btn btn-outline">ติดต่อฉัน</a>
   </div>
-
-  <div class="hero-img">
-    <img src="profile.jpg" alt="Profile">
-  </div>
+  <div class="hero-right"></div>
 </div>
 
 <section id="about">
-  <h2 class="section-title">About Me</h2>
+  <h2 class="section-title">เกี่ยวกับฉัน</h2>
   <div class="grid">
     <div class="card">
-      <h3>Education</h3>
-      <p>Computer Science and Information Technology student at Khon Kaen University.</p>
+      <h3>ประวัติการศึกษา</h3>
+      <p>
+        กำลังศึกษาระดับปริญญาตรี
+        สาขาวิทยาการคอมพิวเตอร์สารสนเทศ
+        มหาวิทยาลัยขอนแก่น
+      </p>
     </div>
     <div class="card">
-      <h3>Skills</h3>
-      <p>HTML, CSS, JavaScript, React, PHP, MySQL, Unity 3D, AI.</p>
+      <h3>ทักษะความสามารถ</h3>
+      <p>
+        สามารถพัฒนาเว็บไซต์ด้วย HTML, CSS, JavaScript
+        รวมถึงออกแบบ UI ให้ดูทันสมัยและใช้งานง่าย
+      </p>
     </div>
     <div class="card">
-      <h3>Strength</h3>
-      <p>UI Design sense, structured thinking, problem solving, and attention to detail.</p>
+      <h3>เป้าหมาย</h3>
+      <p>
+        ต้องการพัฒนาทักษะด้าน Frontend และ UX/UI
+        เพื่อก้าวสู่การเป็นนักพัฒนาเว็บไซต์มืออาชีพ
+      </p>
     </div>
   </div>
 </section>
 
 <section id="projects">
-  <h2 class="section-title">Projects</h2>
+  <h2 class="section-title">ผลงาน</h2>
   <div class="grid">
     <div class="card">
-      <img src="project1.jpg" class="project-img">
-      <h3>Calculator Web App</h3>
-      <p>Interactive calculator built with JavaScript.</p>
+      <h3>เครื่องคิดเลขออนไลน์</h3>
+      <p>
+        เว็บแอปพลิเคชันเครื่องคิดเลขที่พัฒนาด้วย JavaScript
+        รองรับการคำนวณพื้นฐานและมีการออกแบบ UI ที่เรียบง่าย
+      </p>
       <br>
-      <a href="calculator.html" class="btn btn-primary">Live Demo</a>
+      <a href="calculator.html" class="btn btn-primary">ดูโปรเจค</a>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="contact-box">
-    <h2>Let's Work Together</h2>
-    <p>Email: jutatip.ph@kkumail.com</p>
+  <div class="contact">
+    <h2>ติดต่อ</h2>
+    <p>อีเมล: jutatip.ph@kkumail.com</p>
+    <p>Facebook / Instagram สามารถดูได้จากหน้าโปรไฟล์</p>
   </div>
 </section>
 
