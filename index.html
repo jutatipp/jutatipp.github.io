@@ -10,7 +10,7 @@
 
 <style>
 :root{
-  --primary:#3fa9f5;
+  --primary:#7b61ff;
   --dark:#0e0e0e;
   --gray:#666;
   --light:#f5f5f5;
@@ -77,22 +77,40 @@ nav a:hover{
   padding-left:10%;
 }
 
-.hero-left h1{
-  font-size:72px;
-  line-height:1.1;
-  margin-bottom:25px;
-}
-
-.hero-left span{
+/* BADGE */
+.intro-badge{
+  display:inline-block;
+  padding:12px 25px;
+  border-radius:40px;
+  background:rgba(123,97,255,0.1);
   color:var(--primary);
+  font-size:16px;
+  margin-bottom:30px;
 }
 
-.hero-left p{
-  max-width:520px;
-  font-size:18px;
-  color:var(--gray);
-  margin-bottom:35px;
-  line-height:1.8;
+/* HERO TITLE */
+.hero-title{
+  font-size:80px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.first-name{
+  color:#222;
+  font-weight:700;
+}
+
+.last-name{
+  color:var(--primary);
+  font-weight:700;
+}
+
+/* SUBTITLE */
+.hero-subtitle{
+  font-size:36px;
+  font-weight:400;
+  color:#888;
+  margin-bottom:40px;
 }
 
 /* BUTTON GROUP */
@@ -133,9 +151,11 @@ nav a:hover{
 .hero-right{
   flex:1;
   background:url("001.jpg") center/cover no-repeat;
-  border-radius:40px 0 0 40px;
-  margin-top:60px;
-  margin-left:-40px;
+  width:400px;
+  height:400px;
+  border-radius:40px;
+  margin-top:120px;
+  margin-left:80px;
 }
 
 /* SECTION */
@@ -173,11 +193,6 @@ section{
   max-width:650px;
 }
 
-.project-box .btn{
-  display:inline-block;
-  margin-top:35px;
-}
-
 /* CONTACT */
 .contact-box{
   margin-top:40px;
@@ -210,54 +225,6 @@ section{
   transform:translateY(-5px);
 }
 
-/* ===== SKILLS SECTION ===== */
-
-.skills-title{
-  margin-top:80px;
-  font-size:40px;
-}
-
-.skills-sub{
-  color:var(--gray);
-  margin-bottom:40px;
-}
-
-.skills-container{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-}
-
-.skill-card{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:16px 24px;
-  border-radius:40px;
-  background:#0f172a;
-  color:white;
-  font-weight:500;
-  box-shadow:0 15px 35px rgba(0,0,0,0.15);
-  transition:0.3s ease;
-}
-
-.skill-card:hover{
-  transform:translateY(-6px);
-}
-
-.html{ color:#e34c26; }
-.css{ color:#264de4; }
-.figma{ color:#f24e1e; }
-.php{ color:#777bb4; }
-.python{ color:#3776ab; }
-.git{ color:#f1502f; }
-.github{ color:white; }
-
-.custom-icon{
-  font-weight:700;
-  color:#38bdf8;
-}
-
 footer{
   text-align:center;
   padding:60px;
@@ -269,11 +236,18 @@ footer{
   .hero{
     flex-direction:column;
   }
+
   .hero-right{
-    height:400px;
+    height:350px;
+    margin:40px auto 0;
   }
-  .hero-left h1{
+
+  .hero-title{
     font-size:48px;
+  }
+
+  .hero-subtitle{
+    font-size:24px;
   }
 }
 </style>
@@ -292,12 +266,17 @@ footer{
 
 <div class="hero">
   <div class="hero-left">
-    <h1><span class="small-text">Hello, I'm Numnim </span> <span>Jutatip Phubunlot </span></h1>
-    <p>
-      A Computer Science student focused on clean interface design
-      and modern web development. I build structured and visually
-      impactful digital experiences.
-    </p>
+
+    <div class="intro-badge">
+      👋 Hello, I’m Jutatip
+    </div>
+
+    <h1 class="hero-title">
+      <span class="first-name">Jutatip</span>
+      <span class="last-name"> Surathip</span>
+    </h1>
+
+    <h2 class="hero-subtitle">I’m a Programmer</h2>
 
     <div class="button-group">
       <a href="#projects" class="btn btn-primary">View Work</a>
@@ -308,10 +287,12 @@ footer{
       <a href="https://www.facebook.com/jutatip.phubunlot" target="_blank">
         <i class="fab fa-facebook"></i>
       </a>
+
       <a href="https://github.com/jutatipp" target="_blank">
         <i class="fab fa-github"></i>
       </a>
     </div>
+
   </div>
 
   <div class="hero-right"></div>
@@ -325,37 +306,20 @@ footer{
       I enjoy creating clean and modern user interfaces while continuously
       improving my frontend development skills.
     </p>
-
-    <h3 class="skills-title">Skills</h3>
-    <p class="skills-sub">Languages & Tools</p>
-
-    <div class="skills-container">
-      <div class="skill-card"><i class="fab fa-html5 html"></i><span>HTML</span></div>
-      <div class="skill-card"><i class="fab fa-css3-alt css"></i><span>CSS</span></div>
-      <div class="skill-card"><i class="fab fa-figma figma"></i><span>Figma</span></div>
-      <div class="skill-card"><i class="fab fa-php php"></i><span>PHP</span></div>
-      <div class="skill-card"><span class="custom-icon">Unity</span><span>Unity</span></div>
-      <div class="skill-card"><i class="fab fa-python python"></i><span>Python</span></div>
-      <div class="skill-card"><span class="custom-icon">C#</span><span>C#</span></div>
-      <div class="skill-card"><span class="custom-icon">TS</span><span>TypeScript</span></div>
-      <div class="skill-card"><i class="fab fa-git-alt git"></i><span>Git</span></div>
-      <div class="skill-card"><i class="fab fa-github github"></i><span>GitHub</span></div>
-      <div class="skill-card"><span class="custom-icon">Canva</span><span>Canva</span></div>
-      <div class="skill-card"><span class="custom-icon">AI</span><span>AI Tools</span></div>
-      <div class="skill-card"><span class="custom-icon">Next</span><span>Next.js</span></div>
-    </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="section-wrapper">
     <h2>Projects</h2>
+
     <div class="project-box">
       <h3>Calculator Web Application</h3>
       <p>
         An interactive calculator built with HTML, CSS, and JavaScript.
         This project focuses on usability and structured UI layout.
       </p>
+
       <a href="calculator.html" class="btn btn-primary">Open Project</a>
     </div>
   </div>
@@ -364,6 +328,7 @@ footer{
 <section id="contact">
   <div class="section-wrapper">
     <h2>Contact</h2>
+
     <div class="contact-box">
       <p>Email: jutatip.ph@kkumail.com</p>
       <p>LINE: 12345</p>
