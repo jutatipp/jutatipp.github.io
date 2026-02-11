@@ -129,11 +129,24 @@ nav a:hover{
   color:white;
 }
 
-/* HERO IMAGE */
 .hero-right{
   flex:1;
-  background:url("profile.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:60px;
 }
+
+.hero-right img{
+  width:85%;
+  height:80vh;
+  object-fit:cover;
+  border-radius:40px;
+  box-shadow:
+      0 30px 60px rgba(0,0,0,0.15),
+      0 0 0 1px rgba(0,0,0,0.05);
+}
+
 
 /* SECTION */
 section{
