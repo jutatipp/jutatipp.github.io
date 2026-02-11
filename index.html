@@ -83,11 +83,6 @@ nav a:hover{
   margin-bottom:25px;
 }
 
-.project-box .btn{
-  display:inline-block;
-  margin-top:35px;
-}
-
 .hero-left span{
   color:var(--primary);
 }
@@ -138,16 +133,10 @@ nav a:hover{
 .hero-right{
   flex:1;
   background:url("001.jpg") center/cover no-repeat;
-  width:400px;          /* ปรับความกว้าง */
-  height:400px;         /* ปรับความสูง */
-  object-fit:cover;
-  border-radius:40px;   /* โค้งแน่นอน */
-  margin-top:60px;   /* ปรับเลขมากขึ้น = ลงมากขึ้น */
-  padding-left:80px;
-
-
+  border-radius:40px 0 0 40px;
+  margin-top:60px;
+  margin-left:-40px;
 }
-
 
 /* SECTION */
 section{
@@ -184,6 +173,11 @@ section{
   max-width:650px;
 }
 
+.project-box .btn{
+  display:inline-block;
+  margin-top:35px;
+}
+
 /* CONTACT */
 .contact-box{
   margin-top:40px;
@@ -214,6 +208,54 @@ section{
 .social-icons a:hover{
   color:var(--primary);
   transform:translateY(-5px);
+}
+
+/* ===== SKILLS SECTION ===== */
+
+.skills-title{
+  margin-top:80px;
+  font-size:40px;
+}
+
+.skills-sub{
+  color:var(--gray);
+  margin-bottom:40px;
+}
+
+.skills-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.skill-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 24px;
+  border-radius:40px;
+  background:#0f172a;
+  color:white;
+  font-weight:500;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+  transition:0.3s ease;
+}
+
+.skill-card:hover{
+  transform:translateY(-6px);
+}
+
+.html{ color:#e34c26; }
+.css{ color:#264de4; }
+.figma{ color:#f24e1e; }
+.php{ color:#777bb4; }
+.python{ color:#3776ab; }
+.git{ color:#f1502f; }
+.github{ color:white; }
+
+.custom-icon{
+  font-weight:700;
+  color:#38bdf8;
 }
 
 footer{
@@ -250,7 +292,7 @@ footer{
 
 <div class="hero">
   <div class="hero-left">
-    <h1>Hello, I'm <span>Jutatip</span></h1>
+    <h1><span class="small-text">Hello, I'm Numnim </span> <span>Jutatip Phubunlot </span></h1>
     <p>
       A Computer Science student focused on clean interface design
       and modern web development. I build structured and visually
@@ -262,17 +304,14 @@ footer{
       <a href="#contact" class="btn btn-outline">Get In Touch</a>
     </div>
 
-    <!-- Social clickable icons -->
     <div class="social-icons">
       <a href="https://www.facebook.com/jutatip.phubunlot" target="_blank">
         <i class="fab fa-facebook"></i>
       </a>
-
       <a href="https://github.com/jutatipp" target="_blank">
         <i class="fab fa-github"></i>
       </a>
     </div>
-
   </div>
 
   <div class="hero-right"></div>
@@ -286,20 +325,37 @@ footer{
       I enjoy creating clean and modern user interfaces while continuously
       improving my frontend development skills.
     </p>
+
+    <h3 class="skills-title">Skills</h3>
+    <p class="skills-sub">Languages & Tools</p>
+
+    <div class="skills-container">
+      <div class="skill-card"><i class="fab fa-html5 html"></i><span>HTML</span></div>
+      <div class="skill-card"><i class="fab fa-css3-alt css"></i><span>CSS</span></div>
+      <div class="skill-card"><i class="fab fa-figma figma"></i><span>Figma</span></div>
+      <div class="skill-card"><i class="fab fa-php php"></i><span>PHP</span></div>
+      <div class="skill-card"><span class="custom-icon">Unity</span><span>Unity</span></div>
+      <div class="skill-card"><i class="fab fa-python python"></i><span>Python</span></div>
+      <div class="skill-card"><span class="custom-icon">C#</span><span>C#</span></div>
+      <div class="skill-card"><span class="custom-icon">TS</span><span>TypeScript</span></div>
+      <div class="skill-card"><i class="fab fa-git-alt git"></i><span>Git</span></div>
+      <div class="skill-card"><i class="fab fa-github github"></i><span>GitHub</span></div>
+      <div class="skill-card"><span class="custom-icon">Canva</span><span>Canva</span></div>
+      <div class="skill-card"><span class="custom-icon">AI</span><span>AI Tools</span></div>
+      <div class="skill-card"><span class="custom-icon">Next</span><span>Next.js</span></div>
+    </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="section-wrapper">
     <h2>Projects</h2>
-
     <div class="project-box">
       <h3>Calculator Web Application</h3>
       <p>
         An interactive calculator built with HTML, CSS, and JavaScript.
         This project focuses on usability and structured UI layout.
       </p>
-
       <a href="calculator.html" class="btn btn-primary">Open Project</a>
     </div>
   </div>
@@ -308,7 +364,6 @@ footer{
 <section id="contact">
   <div class="section-wrapper">
     <h2>Contact</h2>
-
     <div class="contact-box">
       <p>Email: jutatip.ph@kkumail.com</p>
       <p>LINE: 12345</p>
