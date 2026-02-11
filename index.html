@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jutatip | Portfolio</title>
+<title>Jutatip | Creative Developer</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg-dark:#1f1510;
-  --bg-card:rgba(255,255,255,0.05);
-  --brown-soft:#3b2a22;
-  --blue-accent:#4db8ff;
-  --blue-glow:rgba(77,184,255,0.4);
-  --text-light:#f5f5f5;
-  --text-muted:#b5b5b5;
+  --brown:#2a1b14;
+  --brown-light:#3b241c;
+  --blue:#5cc8ff;
+  --purple:#9c7bff;
+  --text:#f5f5f5;
+  --muted:#b9b9b9;
 }
 
 *{
@@ -25,117 +25,141 @@
 }
 
 body{
-  background:var(--bg-dark);
-  color:var(--text-light);
-  line-height:1.6;
+  background:var(--brown);
+  color:var(--text);
+  overflow-x:hidden;
 }
 
 /* NAVBAR */
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 8%;
   position:fixed;
   width:100%;
-  top:0;
-  background:rgba(31,21,16,0.85);
-  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  padding:25px 8%;
+  background:rgba(42,27,20,0.7);
+  backdrop-filter:blur(12px);
   z-index:1000;
 }
 
-nav h3{
-  color:var(--blue-accent);
-  letter-spacing:1px;
+nav h2{
+  color:var(--blue);
+  letter-spacing:2px;
 }
 
 nav ul{
+  list-style:none;
   display:flex;
   gap:30px;
-  list-style:none;
 }
 
 nav a{
   text-decoration:none;
-  color:var(--text-muted);
+  color:var(--muted);
   font-size:14px;
   transition:0.3s;
 }
 
 nav a:hover{
-  color:var(--blue-accent);
+  color:var(--blue);
 }
 
-/* HERO */
+/* HERO SPLIT */
 .hero{
   display:flex;
-  align-items:center;
+  height:100vh;
+}
+
+.hero-left{
+  flex:1;
+  display:flex;
+  flex-direction:column;
   justify-content:center;
-  gap:80px;
-  padding:150px 10% 100px;
-  flex-wrap:wrap;
+  padding:0 10%;
+  background:linear-gradient(
+    90deg,
+    var(--brown) 0%,
+    var(--brown-light) 50%,
+    rgba(42,27,20,0.3) 100%
+  );
 }
 
-.hero-text{
-  max-width:500px;
-}
-
-.hero-text h1{
-  font-size:48px;
+.hero-left h1{
+  font-size:52px;
   margin-bottom:15px;
 }
 
-.hero-text span{
-  color:var(--blue-accent);
+.hero-left span{
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.hero-text p{
-  color:var(--text-muted);
+.hero-left p{
+  color:var(--muted);
   margin-bottom:25px;
+  max-width:450px;
 }
 
 .btn{
+  display:inline-block;
   padding:12px 28px;
   border-radius:30px;
-  border:1px solid var(--blue-accent);
-  color:var(--blue-accent);
+  border:1px solid var(--blue);
+  color:var(--blue);
   text-decoration:none;
   transition:0.3s;
 }
 
 .btn:hover{
-  background:var(--blue-accent);
-  color:var(--bg-dark);
-  box-shadow:0 0 20px var(--blue-glow);
+  background:var(--blue);
+  color:var(--brown);
+  box-shadow:0 0 25px rgba(92,200,255,0.6);
 }
 
-/* PROFILE IMAGE */
-.hero-img img{
-  width:300px;
-  border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.6);
-  border:2px solid var(--blue-accent);
+/* HERO RIGHT IMAGE */
+.hero-right{
+  flex:1;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-right img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-right::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    270deg,
+    rgba(0,0,0,0.4),
+    rgba(92,200,255,0.2)
+  );
 }
 
 /* SECTION */
 section{
-  padding:100px 10%;
+  padding:120px 10%;
 }
 
 .section-title{
-  font-size:28px;
-  margin-bottom:40px;
-  color:var(--blue-accent);
+  font-size:30px;
+  margin-bottom:50px;
+  color:var(--blue);
 }
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
 }
 
 .card{
-  background:var(--bg-card);
+  background:rgba(255,255,255,0.05);
   padding:30px;
   border-radius:20px;
   backdrop-filter:blur(15px);
@@ -145,39 +169,44 @@ section{
 
 .card:hover{
   transform:translateY(-10px);
-  border:1px solid var(--blue-accent);
-  box-shadow:0 0 25px var(--blue-glow);
+  border:1px solid var(--blue);
+  box-shadow:0 0 30px rgba(92,200,255,0.4);
 }
 
 .card h3{
-  margin-bottom:10px;
-  color:var(--blue-accent);
+  margin-bottom:15px;
+  color:var(--blue);
 }
 
 .card p{
-  color:var(--text-muted);
+  color:var(--muted);
   font-size:14px;
+}
+
+/* PROJECT IMAGE */
+.project-img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
 }
 
 /* FOOTER */
 footer{
   text-align:center;
   padding:40px;
-  color:var(--text-muted);
+  color:var(--muted);
   border-top:1px solid rgba(255,255,255,0.05);
 }
 
+/* RESPONSIVE */
 @media(max-width:900px){
   .hero{
     flex-direction:column;
-    text-align:center;
   }
-
-  .hero-img img{
-    width:220px;
+  .hero-left{
+    padding:150px 8% 80px;
   }
-
-  .hero-text h1{
+  .hero-left h1{
     font-size:36px;
   }
 }
@@ -187,24 +216,24 @@ footer{
 <body>
 
 <nav>
-  <h3>Jutatip</h3>
+  <h2>JUTATIP</h2>
   <ul>
-    <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <div class="hero">
-  <div class="hero-text">
-    <h1>Hi, I'm <span>Jutatip</span></h1>
-    <p>Computer Science Student focused on Frontend Development, UI/UX and AI.
-       Passionate about building clean and professional web interfaces.</p>
-    <a href="#projects" class="btn">View Projects</a>
+  <div class="hero-left">
+    <h1>Hello, I'm <span>Jutatip</span></h1>
+    <p>Creative Frontend Developer focused on modern UI, smooth interaction,
+       and professional web experiences.</p>
+    <a href="#projects" class="btn">View My Work</a>
   </div>
 
-  <div class="hero-img">
-    <img src="001.jpg" alt="Profile">
+  <div class="hero-right">
+    <img src="profile.jpg" alt="Profile">
   </div>
 </div>
 
@@ -213,8 +242,8 @@ footer{
   <div class="grid">
     <div class="card"><h3>Frontend</h3><p>HTML, CSS, JavaScript, React</p></div>
     <div class="card"><h3>Backend</h3><p>PHP, MySQL</p></div>
-    <div class="card"><h3>Tools</h3><p>Figma, Canva, Git</p></div>
-    <div class="card"><h3>Other</h3><p>Unity 3D, AI (Decision Tree)</p></div>
+    <div class="card"><h3>UI/UX</h3><p>Figma, Canva, Wireframing</p></div>
+    <div class="card"><h3>Other</h3><p>Unity 3D, AI Decision Tree</p></div>
   </div>
 </section>
 
@@ -222,12 +251,18 @@ footer{
   <h2 class="section-title">Projects</h2>
   <div class="grid">
     <div class="card">
-      <h3>Calculator App</h3>
-      <p>Basic calculator built with JavaScript.</p>
+      <img src="project1.jpg" class="project-img">
+      <h3>Calculator Web App</h3>
+      <p>Interactive calculator built using JavaScript.</p>
       <br>
       <a href="calculator.html" class="btn">Live Demo</a>
     </div>
   </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p>Email: jutatip.ph@kkumail.com</p>
 </section>
 
 <footer>
