@@ -3,279 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jutatip | Portfolio</title>
+<title>Jutatip Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --primary:#3fa9f5;
-  --dark:#0e0e0e;
-  --gray:#666;
-  --light:#f5f5f5;
-  --shadow:0 25px 50px rgba(0,0,0,0.08);
-}
-
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Space Grotesk',sans-serif;
-  scroll-behavior:smooth;
+  font-family:'Inter',sans-serif;
 }
 
 body{
-  background:#fff;
-  color:var(--dark);
+  background:#020617;
+  color:white;
 }
 
-/* NAV */
+/* ===== NAVBAR ===== */
 nav{
   position:fixed;
-  top:40px;
   width:100%;
+  top:0;
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:rgba(15,23,42,0.6);
+  backdrop-filter:blur(10px);
   z-index:1000;
+}
+
+nav h1{
+  font-size:18px;
+  font-weight:600;
 }
 
 nav ul{
   display:flex;
-  gap:70px;
+  gap:40px;
   list-style:none;
-  background:white;
-  padding:18px 70px;
-  border-radius:60px;
-  box-shadow:var(--shadow);
 }
 
 nav a{
   text-decoration:none;
-  color:var(--dark);
-  font-weight:500;
-  font-size:15px;
-  letter-spacing:1px;
+  color:#94a3b8;
+  font-size:14px;
   transition:0.3s;
 }
 
 nav a:hover{
-  color:var(--primary);
+  color:white;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
   height:100vh;
   display:flex;
-}
-
-.hero-left{
-  flex:1;
-  display:flex;
-  flex-direction:column;
   justify-content:center;
-  padding-left:10%;
+  align-items:center;
+  text-align:center;
+  padding:0 20px;
+  position:relative;
+  overflow:hidden;
 }
 
-.hero-left h1{
-  font-size:72px;
-  line-height:1.1;
+/* background glow */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, #6366f1, transparent 70%);
+  top:-100px;
+  left:-100px;
+  opacity:0.4;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, #3b82f6, transparent 70%);
+  bottom:-100px;
+  right:-100px;
+  opacity:0.4;
+}
+
+/* content */
+.hero-content{
+  max-width:900px;
+  z-index:2;
+}
+
+/* badge */
+.badge{
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  font-size:13px;
+  color:#a5b4fc;
   margin-bottom:25px;
 }
 
-.hero-left span{
-  color:var(--primary);
+/* title */
+.hero h1{
+  font-size:52px;
+  line-height:1.3;
+  margin-bottom:20px;
+  font-weight:700;
 }
 
-.hero-left p{
-  max-width:520px;
+/* description */
+.hero p{
   font-size:18px;
-  color:var(--gray);
-  margin-bottom:35px;
+  color:#94a3b8;
   line-height:1.8;
+  margin-bottom:40px;
 }
 
-/* BUTTON GROUP */
-.button-group{
+/* buttons */
+.buttons{
   display:flex;
+  justify-content:center;
   gap:20px;
   flex-wrap:wrap;
 }
 
 .btn{
-  padding:16px 35px;
-  border-radius:40px;
+  padding:14px 28px;
+  border-radius:10px;
   text-decoration:none;
   font-size:14px;
   transition:0.3s;
 }
 
 .btn-primary{
-  background:var(--dark);
+  background:linear-gradient(135deg,#6366f1,#3b82f6);
   color:white;
+  box-shadow:0 10px 30px rgba(99,102,241,0.4);
 }
 
 .btn-primary:hover{
-  background:var(--primary);
+  transform:translateY(-3px);
 }
 
 .btn-outline{
-  border:2px solid var(--dark);
-  color:var(--dark);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
 }
 
 .btn-outline:hover{
-  background:var(--dark);
-  color:white;
+  background:rgba(255,255,255,0.1);
 }
 
-/* HERO IMAGE */
-.hero-right{
-  flex:1;
-  background:url("001.jpg") center/cover no-repeat;
-width:400px; /* ปรับความกว้าง */ 
-height:400px; /* ปรับความสูง */ 
-object-fit:cover; border-radius:40px; /* โค้งแน่นอน */ 
-margin-top:60px; /* ปรับเลขมากขึ้น = ลงมากขึ้น */ 
-padding-left:80px;
-}
-
-/* SECTION */
-section{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding:0 10%;
-}
-
-.section-wrapper{
-  max-width:1100px;
-  width:100%;
-}
-
-.section-wrapper h2{
-  font-size:56px;
-  margin-bottom:30px;
-}
-
-.section-wrapper p{
-  max-width:600px;
-  font-size:18px;
-  color:var(--gray);
-  line-height:1.8;
-}
-
-/* PROJECT */
-.project-box{
-  margin-top:50px;
-  padding:50px;
-  border-radius:30px;
-  background:var(--light);
-  box-shadow:var(--shadow);
-  max-width:650px;
-}
-
-.project-box .btn{
-  display:inline-block;
-  margin-top:35px;
-}
-
-/* CONTACT */
-.contact-box{
-  margin-top:40px;
-  padding:50px;
-  border-radius:40px;
-  background:var(--dark);
-  color:white;
-  max-width:600px;
-}
-
-.contact-box p{
-  margin-bottom:10px;
-}
-
-/* SOCIAL ICONS */
-.social-icons{
-  margin-top:30px;
-  display:flex;
-  gap:25px;
-}
-
-.social-icons a{
-  font-size:28px;
-  color:var(--dark);
-  transition:0.3s;
-}
-
-.social-icons a:hover{
-  color:var(--primary);
-  transform:translateY(-5px);
-}
-
-/* ===== SKILLS SECTION ===== */
-
-.skills-title{
-  margin-top:80px;
-  font-size:40px;
-}
-
-.skills-sub{
-  color:var(--gray);
-  margin-bottom:40px;
-}
-
-.skills-container{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-}
-
-.skill-card{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:16px 24px;
-  border-radius:40px;
-  background:#0f172a;
-  color:white;
-  font-weight:500;
-  box-shadow:0 15px 35px rgba(0,0,0,0.15);
-  transition:0.3s ease;
-}
-
-.skill-card:hover{
-  transform:translateY(-6px);
-}
-
-.html{ color:#e34c26; }
-.css{ color:#264de4; }
-.figma{ color:#f24e1e; }
-.php{ color:#777bb4; }
-.python{ color:#3776ab; }
-.git{ color:#f1502f; }
-.github{ color:white; }
-
-.custom-icon{
-  font-weight:700;
-  color:#38bdf8;
-}
-
-footer{
-  text-align:center;
-  padding:60px;
-  color:#aaa;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .hero{
-    flex-direction:column;
-  }
-  .hero-right{
-    height:400px;
-  }
-  .hero-left h1{
-    font-size:48px;
+/* responsive */
+@media(max-width:768px){
+  .hero h1{
+    font-size:32px;
   }
 }
 </style>
@@ -283,107 +171,40 @@ footer{
 
 <body>
 
+<!-- NAV -->
 <nav>
+  <h1>Jutatip Phubunlot</h1>
   <ul>
-    <li><a href="#">HOME</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#projects">PROJECTS</a></li>
-    <li><a href="#contact">CONTACT</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Calculator</a></li>
   </ul>
 </nav>
 
-<div class="hero">
-  <div class="hero-left">
-     <div class="intro-badge">
-    👋 Hello, I’m numnim
-  </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
 
-  <h1 class="hero-title">
-    <span class="first-name">Jutatip</span><span class="last-name"> Phubunlot </span>
-  </h1>
+    <div class="badge">● Available for opportunities</div>
+
+    <h1>
+      Jutatip Phubunlot - Computer<br>
+      Science Student & Full-Stack<br>
+      Developer
+    </h1>
 
     <p>
-      A Computer Science student focused on clean interface design
-      and modern web development. I build structured and visually
-      impactful digital experiences.
+      Crafting elegant digital solutions through innovative web technologies,
+      cloud architecture, and modern software engineering practices.
+      Specialized in building scalable applications and creating exceptional user experiences.
     </p>
 
-    <div class="button-group">
-      <a href="#projects" class="btn btn-primary">View Work</a>
-      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <div class="buttons">
+      <a href="#" class="btn btn-primary">View Projects →</a>
+      <a href="#" class="btn btn-outline">Contact Me</a>
     </div>
 
-    <div class="social-icons">
-      <a href="https://www.facebook.com/jutatip.phubunlot" target="_blank">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://github.com/jutatipp" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-right"></div>
-</div>
-
-<section id="about">
-  <div class="section-wrapper">
-    <h2>About Me</h2>
-    <p>
-      I am currently studying Computer Science and Information Technology.
-      I enjoy creating clean and modern user interfaces while continuously
-      improving my frontend development skills.
-    </p>
-
-    <h3 class="skills-title">Skills</h3>
-    <p class="skills-sub">Languages & Tools</p>
-
-    <div class="skills-container">
-      <div class="skill-card"><i class="fab fa-html5 html"></i><span>HTML</span></div>
-      <div class="skill-card"><i class="fab fa-css3-alt css"></i><span>CSS</span></div>
-      <div class="skill-card"><i class="fab fa-figma figma"></i><span>Figma</span></div>
-      <div class="skill-card"><i class="fab fa-php php"></i><span>PHP</span></div>
-      <div class="skill-card"><span class="custom-icon">Unity</span><span>Unity</span></div>
-      <div class="skill-card"><i class="fab fa-python python"></i><span>Python</span></div>
-      <div class="skill-card"><span class="custom-icon">C#</span><span>C#</span></div>
-      <div class="skill-card"><span class="custom-icon">TS</span><span>TypeScript</span></div>
-      <div class="skill-card"><i class="fab fa-git-alt git"></i><span>Git</span></div>
-      <div class="skill-card"><i class="fab fa-github github"></i><span>GitHub</span></div>
-      <div class="skill-card"><span class="custom-icon">Canva</span><span>Canva</span></div>
-      <div class="skill-card"><span class="custom-icon">AI</span><span>AI Tools</span></div>
-      <div class="skill-card"><span class="custom-icon">Next</span><span>Next.js</span></div>
-    </div>
   </div>
 </section>
-
-<section id="projects">
-  <div class="section-wrapper">
-    <h2>Projects</h2>
-    <div class="project-box">
-      <h3>Calculator Web Application</h3>
-      <p>
-        An interactive calculator built with HTML, CSS, and JavaScript.
-        This project focuses on usability and structured UI layout.
-      </p>
-      <a href="calculator.html" class="btn btn-primary">Open Project</a>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="section-wrapper">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <p>Email: jutatip.ph@kkumail.com</p>
-      <p>LINE ID : 0934413324</p>
-      <p>Phone: 0934413324</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 Jutatip Portfolio
-</footer>
 
 </body>
 </html>
